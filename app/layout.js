@@ -1,4 +1,9 @@
+//layout.js 可以把每個頁面都有的元素，套用在所有頁面上
+//每個頁面不同的內容，會從{children}中代入。
+
 import { Inter } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
+import Header from './components/header' // 注意這裡改為默認導入
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -10,8 +15,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+
+        <body className={inter.className}>
+        <Header />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

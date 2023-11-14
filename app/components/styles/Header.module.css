@@ -1,0 +1,73 @@
+/* .navBar{
+    background-color: #2A4321; 
+    display: flex;
+    align-items: center;
+    height: 54px;
+
+}
+
+.signBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.signInBtn{
+    color: white;
+    width: 65px;
+    text-align: center;
+    margin: 0px 10px 0px 0px;
+
+}
+.signUpBtn{
+    color: white;
+    width: 65px;
+    text-align: center;
+    margin: 0px 10px;
+
+
+
+}
+.navHomeBtn{
+    color: white;
+    text-align: center;
+    margin: 0px 10px;
+
+}
+
+ */
+
+
+
+ .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: #2A4321; /* Tailwind's bg-blue-700 */
+  }
+  
+  .navItem {
+    text-decoration: none;
+    font-size: 1.125rem; /* Tailwind's text-lg */
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  .SignItemsCenter{
+    display: flex;
+
+    
+  }
+  
+  .link {
+    color: #ffffff; /* Tailwind's text-gray-300 */
+    margin-right: 1rem;
+  }
+  
+  .link:hover {
+    color: #c5c5c5;
+    transition: 0.3s;
+  }
+  
