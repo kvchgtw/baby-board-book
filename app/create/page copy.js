@@ -3,9 +3,6 @@ import React from 'react'
 import styles from '../components/styles/Createpage.module.css'
 import { useState } from 'react';
 import Card from '../components/Card';
-import { useUser } from "@clerk/clerk-react";
-
-
 
 
 let selectedCategorySaved = {}
@@ -49,8 +46,6 @@ const difficultyLevels = [
 const CreatePage = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [categorySelected, setCategorySelected] = useState(false);
-  
-  const { user } = useUser();
 
   const handleCardSelect = (index) => {
       setSelectedCard(index);
@@ -60,7 +55,6 @@ const CreatePage = () => {
   };
 
   const handleDifficultySelect = async (level) => {
-    console.log('clicked handle difficulty level')
     try {
         const response = await fetch('/api/fetchData', {
           method: 'POST',
@@ -79,35 +73,7 @@ const CreatePage = () => {
         });
   
         const data = await response.json();
-        const generationId = await data.sdGenerationJob.generationId
-        console.log(generationId); //收到 Leonardo API返回的 generationId
-        //再用這個generationId，丟給server API, 存到Firestore
-        
-        if (generationId){
-            try {
-                const response = await fetch('/api/sendGenerationId_db', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({
-                    // 這裡填入你想發送到服務器的數據
-                    generationId: generationId,
-                    userId: user.id
-                    
-                  }),
-                });
-          
-                const data = await response.json();
-                console.log(data);
-        
-        
-              } catch (error) {
-                console.error('Sending generationId Error:', error);
-              }
-
-        }
-
+      //   console.log(data.sdGenerationJob.generationId);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -148,5 +114,14 @@ const CreatePage = () => {
 };
 
 export default CreatePage;
+
+
+
+
+
+
+
+
+// ... your existing arrays for bookCategories and difficultyLevels
 
 

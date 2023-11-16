@@ -34,14 +34,6 @@ export default async function handler(req, res) {
       }),
     };
 
-    const getImageOptions = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          authorization: `Bearer ${apiKey}`
-        }
-      };
-
   
     try {
       // 向第三方 API 發送請求
@@ -55,7 +47,7 @@ export default async function handler(req, res) {
   
       // 返回數據到客戶端
       const generationId = data.sdGenerationJob.generationId
-      console.log('generationId:', generationId);
+      console.log('API Fetch generationId:', generationId);
       // if (generationId){
 
       //   const getImageUrlResponse = await fetch('https://cloud.leonardo.ai/api/rest/v1/generations/'+generationId, getImageOptions)

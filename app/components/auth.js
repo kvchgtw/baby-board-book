@@ -7,11 +7,11 @@ export default async function Auth() {
   const { userId } = auth();
 
   if (userId) {
-    console.log('userId:', userId);
+    // console.log('userId:', userId);
 
     // Get the User object when you need access to the user's information
     const user = await currentUser();
-    console.log('user:', user);
+    // console.log('user:', user);
 
     const usersCollectionRef = collection(db, "users");
 
@@ -36,7 +36,7 @@ export default async function Auth() {
     } else {
       // User data exists, process or display it
       querySnapshot.forEach(doc => {
-        console.log('User data:', doc.id, doc.data());
+        // console.log('User data:', doc.id, doc.data());
       });
     }
   }
