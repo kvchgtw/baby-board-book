@@ -4,6 +4,7 @@ import styles from '../components/styles/Createpage.module.css'
 import { useState } from 'react';
 import Card from '../components/Card';
 import { useUser } from "@clerk/clerk-react";
+import Link from 'next/link'
 
 
 
@@ -118,9 +119,11 @@ const CreatePage = () => {
       <div className={styles.chooseCategoryText}>
         {categorySelected ? "Select Difficulty Level (2/2)" : "Choose a Book Category (1/2)"}
       </div>
+      
       <div className={styles.bookCategoriesContainer}>
         {categorySelected ? (
           difficultyLevels.map((level, index) => (
+            <Link href='/book'>
             <Card
               key={index}
               img={level.img}
@@ -129,6 +132,7 @@ const CreatePage = () => {
               onSelect={() => handleDifficultySelect(level.title)} // Call API fetch on difficulty select
               // Add onSelect for difficulty level cards
             />
+            </Link>
           ))
         ) : (
           bookCategories.map((bookCategory, index) => (
