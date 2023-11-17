@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 
 
-
+const animalList = ['fox', 'dog', 'cat', 'elephant']
 let selectedCategorySaved = {}
 const bookCategories = [
     {
@@ -63,7 +63,11 @@ const CreatePage = () => {
   const handleDifficultySelect = async (level) => {
     console.log('clicked handle difficulty level')
     try {
-        const response = await fetch('/api/fetchData', {
+      for (const animalName of animalList) {  // 遍歷 animalList
+        const prompt = `high quality, 8K Ultra HD, style cartoon, two-dimensional, cute baby ${animalName}, colorful, high detailed`;
+        
+      
+      const response = await fetch('/api/fetchData', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -73,7 +77,7 @@ const CreatePage = () => {
             imageHeight: 600,
             imageWidth: 600,
             albedoXLmodelId: '2067ae52-33fd-4a82-bb92-c2c55e7d2786',
-            prompt: 'high quality, 8K Ultra HD, style cartoon, two-dimensional, cute baby fox, colorful, high detailed',
+            prompt: prompt,
             negativePrompt: 'nude, nsfw, text, letters, too many feet, too many fingers, long neck, 2 heads, duplicate, abstract, disfigured, deformed, toy, figure, framed, disfigured, bad art, deformed, poorly drawn, extra limbs, weird colors, 2 heads, elongated body, cropped image, out of frame, draft, deformed hands, twisted fingers, double image, malformed hands, multiple heads, extra limb, ugly, poorly drawn hands, missing limb, cut-off, over satured, grain, lowères, bad anatomy, poorly drawn face, mutation, mutated, floating limbs, disconnected limbs, out of focus, long body, disgusting, extra fingers, groos proportions, missing arms, mutated hands, cloned face, missing legs,',
             numImages: 1,
           }),
@@ -84,31 +88,31 @@ const CreatePage = () => {
         console.log(generationId); //收到 Leonardo API返回的 generationId
         //再用這個generationId，丟給server API, 存到Firestore
         
-        if (generationId){
-            try {
-                const response = await fetch('/api/sendGenerationId_db', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({
-                    // 這裡填入你想發送到服務器的數據
-                    generationId: generationId,
-                    userId: user.id
-                    
-                  }),
-                });
+          if (generationId){
+              try {
+                  const response = await fetch('/api/sendGenerationId_db', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      // 這裡填入你想發送到服務器的數據
+                      generationId: generationId,
+                      userId: user.id
+                      
+                    }),
+                  });
+            
+                  const data = await response.json();
+                  console.log(data);
           
-                const data = await response.json();
-                console.log(data);
-        
-        
-              } catch (error) {
-                console.error('Sending generationId Error:', error);
-              }
+          
+                } catch (error) {
+                  console.error('Sending generationId Error:', error);
+                }
 
+          }
         }
-
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -152,5 +156,3 @@ const CreatePage = () => {
 };
 
 export default CreatePage;
-
-
