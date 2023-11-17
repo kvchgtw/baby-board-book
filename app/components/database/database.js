@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, updateDoc } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -9,7 +9,7 @@ import { getFirestore, collection, addDoc, updateDoc } from 'firebase/firestore'
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDgSTkD8R6YvtE2wdWAkzaB5qRcQAOEBw8",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "ai-babyboardbook.firebaseapp.com",
   projectId: "ai-babyboardbook",
   storageBucket: "ai-babyboardbook.appspot.com",
