@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 
 
-const animalList = ['fox', 'dog', 'cat', 'elephant']
+const animalList = ['fox', 'dog', 'cat', 'elephant', 'pig', 'monkey', 'rabbit']
 let selectedCategorySaved = {}
 const bookCategories = [
     {
