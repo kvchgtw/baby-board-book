@@ -64,7 +64,7 @@ const CreatePage = () => {
     console.log('clicked handle difficulty level')
     try {
       for (const animalName of animalList) {  // 遍歷 animalList
-        const prompt = `high quality, 8K Ultra HD, style cartoon, two-dimensional, cute baby ${animalName}, colorful, high detailed`;
+        const prompt = `high quality, 8K Ultra HD, style cartoon, two-dimensional, one cute baby ${animalName}, colorful, high detailed`;
         
       
       const response = await fetch('/api/fetchData', {
@@ -78,7 +78,7 @@ const CreatePage = () => {
             imageWidth: 600,
             albedoXLmodelId: '2067ae52-33fd-4a82-bb92-c2c55e7d2786',
             prompt: prompt,
-            negativePrompt: 'nude, nsfw, text, letters, too many feet, too many fingers, long neck, 2 heads, duplicate, abstract, disfigured, deformed, toy, figure, framed, disfigured, bad art, deformed, poorly drawn, extra limbs, weird colors, 2 heads, elongated body, cropped image, out of frame, draft, deformed hands, twisted fingers, double image, malformed hands, multiple heads, multiple animals, extra limb, ugly, poorly drawn hands, missing limb, cut-off, over satured, grain, lowères, bad anatomy, poorly drawn face, mutation, mutated, floating limbs, disconnected limbs, out of focus, long body, disgusting, extra fingers, groos proportions, missing arms, mutated hands, cloned face, missing legs,',
+            negativePrompt: 'duplicate, multiple animals, repeated animal pattern, nude, nsfw, text, letters, too many feet, too many fingers, long neck, 2 heads, abstract, disfigured, deformed, toy, figure, framed, disfigured, bad art, deformed, poorly drawn, extra limbs, weird colors, 2 heads, elongated body, cropped image, out of frame, draft, deformed hands, twisted fingers, double image, malformed hands, multiple heads, extra limb, ugly, poorly drawn hands, missing limb, cut-off, over satured, grain, lowères, bad anatomy, poorly drawn face, mutation, mutated, floating limbs, disconnected limbs, out of focus, long body, disgusting, extra fingers, groos proportions, missing arms, mutated hands, cloned face, missing legs,',
             numImages: 1,
           }),
         });
