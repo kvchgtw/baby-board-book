@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     }
   
     // 提取請求體數據
-    const { imageHeight, imageWidth, albedoXLmodelId, prompt, negativePrompt, numImages, itemName , userId } = req.body;
+    const { imageHeight, imageWidth, albedoXLmodelId, prompt, negativePrompt, numImages, itemName , userId, collectionId, category } = req.body;
 
     const postOptions = {
       method: 'POST',
@@ -61,8 +61,10 @@ export default async function handler(req, res) {
             generationId: generationId,
             documentId: '', // 在這裡保留一個欄位來存儲 docRef.id
             imageUrl: '',
-            collectionId: '',
+            collectionId: collectionId,
             itemName: itemName,
+            category: category,
+            collectionName: category+' Collection',
     
           });
           await updateDoc(newImagesDocRef, {

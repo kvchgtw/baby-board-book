@@ -5,11 +5,14 @@ import { useState } from 'react';
 import Card from '../components/Card';
 import { useUser } from "@clerk/clerk-react";
 import Link from 'next/link'
+import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 
 
 
-const animalList = ['hamster', 'bird','rabbit', 'snake']
-let selectedCategorySaved = {}
+
+const animalList = ['rabbit', 'panda']
+let selectedCategorySaved = {};
+let selectedCategoryTitle = '';
 const bookCategories = [
     {
         title: "Animals",
@@ -57,11 +60,13 @@ const CreatePage = () => {
       setSelectedCard(index);
       setCategorySelected(true);  // Set category as selected
       selectedCategorySaved = bookCategories[index]
-      console.log('selected category: ', selectedCategorySaved.title)
+      selectedCategoryTitle = selectedCategorySaved.title
+      console.log('selected category: ', selectedCategoryTitle)
   };
 
   const handleDifficultySelect = async (level) => {
     console.log('clicked handle difficulty level')
+    const collectionId = uuidv4()
     try {
       for (const animalName of animalList) {  // 遍歷 animalList
         const prompt = `high quality, 8K Ultra HD, style cartoon, two-dimensional, one cute baby ${animalName}, colorful, high detailed`;
@@ -82,6 +87,8 @@ const CreatePage = () => {
             numImages: 1,
             itemName: `${animalName}`,
             userId: user.id,
+            collectionId: collectionId,
+            category: selectedCategoryTitle,
           }),
         });
   

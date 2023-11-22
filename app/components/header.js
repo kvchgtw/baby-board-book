@@ -28,7 +28,21 @@ const Header = async () => {
                       </Link>
                   </>
               )}
-             
+              {userId &&(
+                <>
+                    <Link href='create'>
+                        <div className={styles.link}>
+                            Create
+                        </div>
+                    </Link>
+                    
+                    <Link href='collections'>
+                        <div className={styles.link}>
+                            Collections
+                        </div>
+                    </Link>
+                </>
+              )}
               <div className='ml-auto'>
                   <UserButton afterSignOutUrl='/' />
               </div>
