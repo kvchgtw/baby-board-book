@@ -5,9 +5,9 @@ import { useUser } from "@clerk/clerk-react";
 
 function Book() {
   const { user } = useUser();
-  const [imageUrls, setImageUrls] = useState([]); // 新增狀態來儲存圖片 URL
+  const [imagesData, setImagesData] = useState([]); // 更新状态以存储图片数据（包括 URL 和名称）
 
-  const getImageUrldata = async () => {
+  const getImagesData = async () => {
     try {
       const response = await fetch('/api/getImagesUrl', {
         method: 'POST',
@@ -16,23 +16,27 @@ function Book() {
         },
         body: JSON.stringify({
           userId: user.id,
-          collectionId: '' // 請確保這裡有正確的 collectionId
+          collectionId: '' // 确保这里有正确的 collectionId
         }),
       });
 
       const data = await response.json();
-      setImageUrls(data); // 更新狀態以儲存圖片 URL
+      console.log(data);
+      setImagesData(data); // 更新状态以存储从 API 获取到的图片数据
     } catch (error) {
-      console.error('Error downloading image URLs:', error);
+      console.error('Error downloading images data:', error);
     }
   };
 
   return (
     <>
-      <button onClick={getImageUrldata}>Get Image</button>
+      <button onClick={getImagesData}>Get Image</button>
       <div>
-        {imageUrls.map((url, index) => (
-          <img key={index} src={url} alt={`Image ${index}`} className={styles.image} />
+        {imagesData.map((image, index) => (
+          <div key={index}>
+            <img src={image.imageUrl} alt={image.itemName} className={styles.image} />
+            <p>{image.itemName}</p> {/* 显示图片名称 */}
+          </div>
         ))}
       </div>
     </>

@@ -1,4 +1,5 @@
-// pages/api/fetchData.js
+import db from '../../app/components/database/database';
+import { collection, addDoc, updateDoc } from "firebase/firestore";
 
 export default async function handler(req, res) {
     // 只允許 POST 請求
@@ -15,8 +16,8 @@ export default async function handler(req, res) {
     }
   
     // 提取請求體數據
-    const { imageHeight, imageWidth, albedoXLmodelId, prompt, negativePrompt, numImages } = req.body;
-  
+    const { imageHeight, imageWidth, albedoXLmodelId, prompt, negativePrompt, numImages, itemName , userId } = req.body;
+
     const postOptions = {
       method: 'POST',
       headers: {
@@ -44,22 +45,34 @@ export default async function handler(req, res) {
       if (!thirdPartyResponse.ok) {
         return res.status(thirdPartyResponse.status).json({ message: 'Error from POST API', data });
       }
+
+      
   
       // 返回數據到客戶端
-      const generationId = data.sdGenerationJob.generationId
+      const generationId = await data.sdGenerationJob.generationId
       console.log('API Fetch generationId:', generationId);
-      // if (generationId){
 
-      //   const getImageUrlResponse = await fetch('https://cloud.leonardo.ai/api/rest/v1/generations/'+generationId, getImageOptions)
-      //   const getImageUrldata = await getImageUrlResponse.json();
-
-      //   if (!getImageUrlResponse.ok) {
-      //       return res.status(getImageUrlResponse.status).json({ message: 'Error from getImageUrl API', getImageUrldata });
-      //     }
-      //   console.log(getImageUrldata.generated_images[0].url)
-      //   return res.status(200).json(getImageUrldata);
-      // }
-      return res.status(200).json(data);
+      if (generationId && userId){
+        const imagesCollectionRef = collection(db, "images");
+        
+    
+          const newImagesDocRef = await addDoc(imagesCollectionRef, {
+            userId: userId,
+            generationId: generationId,
+            documentId: '', // 在這裡保留一個欄位來存儲 docRef.id
+            imageUrl: '',
+            collectionId: '',
+            itemName: itemName,
+    
+          });
+          await updateDoc(newImagesDocRef, {
+            documentId: newImagesDocRef.id,
+          });
+          console.log('New image data added with Firestore-generated ID:', newImagesDocRef.id);
+        
+      }
+     
+      return res.status(200).json('generationId is saved to DB');
     
     
     } catch (error) {
