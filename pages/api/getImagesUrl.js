@@ -7,9 +7,9 @@ export default async function handler(req, res) {
             const userId = req.body.userId;
             const collectionId = req.body.collectionId;
 
-            if (userId) {
+            if (userId && collectionId) {
                 const imagesCollectionRef = collection(db, "images");
-                const q = query(imagesCollectionRef, where("userId", "==", userId));
+                const q = query(imagesCollectionRef, where("userId", "==", userId), where("collectionId", "==", collectionId));
 
                 // 執行查詢
                 const querySnapshot = await getDocs(q);

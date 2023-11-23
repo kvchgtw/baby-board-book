@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 
 
 
-const animalList = ['rabbit', 'panda']
+const animalList = ['cat']
 let selectedCategorySaved = {};
 let selectedCategoryTitle = '';
 const bookCategories = [
@@ -53,6 +53,8 @@ const difficultyLevels = [
 const CreatePage = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [categorySelected, setCategorySelected] = useState(false);
+  const collectionId = uuidv4()
+
   
   const { user } = useUser();
 
@@ -66,7 +68,6 @@ const CreatePage = () => {
 
   const handleDifficultySelect = async (level) => {
     console.log('clicked handle difficulty level')
-    const collectionId = uuidv4()
     try {
       for (const animalName of animalList) {  // 遍歷 animalList
         const prompt = `high quality, 8K Ultra HD, style cartoon, two-dimensional, one cute baby ${animalName}, colorful, high detailed`;
@@ -111,7 +112,7 @@ const CreatePage = () => {
       <div className={styles.bookCategoriesContainer}>
         {categorySelected ? (
           difficultyLevels.map((level, index) => (
-            <Link href='/book'>
+            <Link href={`/collections/${collectionId}`}>
             <Card
               key={index}
               img={level.img}

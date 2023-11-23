@@ -2,7 +2,7 @@ import db from '../../app/components/database/database';
 import { collection, addDoc, updateDoc } from "firebase/firestore";
 
 export default async function handler(req, res) {
-    // 只允許 POST 請求
+    
     if (req.method !== 'POST') {
       return res.status(405).json({ message: 'Method not allowed' });
     }
@@ -40,6 +40,7 @@ export default async function handler(req, res) {
       // 向第三方 API 發送請求
       const thirdPartyResponse = await fetch('https://cloud.leonardo.ai/api/rest/v1/generations', postOptions);
       const data = await thirdPartyResponse.json();
+      console.log('response from 3rd party API: ', data)
       
       // 檢查第三方 API 的響應
       if (!thirdPartyResponse.ok) {

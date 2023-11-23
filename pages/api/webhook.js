@@ -10,12 +10,13 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         // 打印 POST 請求的 body
         // console.log('images array:', req.body.data.object.images)
-        console.log('images url:', req.body.data.object.images[0].url)
+        console.log('webhook sent images url:', req.body.data.object.images[0].url)
         const recievedImageUrl = req.body.data.object.images[0].url
         const recievedGenerationId =  req.body.data.object.id
 
     try{
         if (recievedImageUrl && recievedGenerationId){
+            console.log('webhook 啟動囉')
             
             const imagesCollectionRef = collection(db, "images");
             const q = query(imagesCollectionRef, where("generationId", "==", recievedGenerationId));
@@ -27,7 +28,8 @@ export default async function handler(req, res) {
                     const docRef = querySnapshot.docs[0].ref;
                     // Update the document
                     await updateDoc(docRef, {
-                        imageUrl: recievedImageUrl
+                        imageUrl: recievedImageUrl,
+                        addfromwebhookjs: 1
                     });
             
                     console.log('Image URL is saved to DB:', docRef.id);

@@ -28,7 +28,7 @@ export default async function handler(req, res) {
                     });
 
                     // 返回數據給前端
-                    console.log(collectionsData)
+                    // console.log(collectionsData)
                     return res.status(200).json(collectionsData);
                 } else {
                     console.log('No documents found matching the criteria.');

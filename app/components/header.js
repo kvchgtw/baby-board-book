@@ -30,13 +30,13 @@ const Header = async () => {
               )}
               {userId &&(
                 <>
-                    <Link href='create'>
+                    <Link href='/create'>
                         <div className={styles.link}>
                             Create
                         </div>
                     </Link>
                     
-                    <Link href='collections'>
+                    <Link href='/collections'>
                         <div className={styles.link}>
                             Collections
                         </div>
