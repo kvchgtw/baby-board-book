@@ -6,7 +6,7 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'cdn.leonardo.ai',
                 port: '',
-                pathname: '',
+                pathname: '/users/**',
             },
         ],
     },
