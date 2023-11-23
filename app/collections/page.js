@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from "@clerk/clerk-react";
-import Card from '../components/Card';
+// import Card from '../components/Card';
 
 const CollectionsPage = () => {
     const { user } = useUser();
