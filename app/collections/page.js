@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from "@clerk/clerk-react";
-// import Card from '../components/Card';
+import styles from '../components/styles/Collections.module.css'; // Assuming you have a CSS module for styling
 
 const CollectionsPage = () => {
     const { user } = useUser();
@@ -36,20 +36,19 @@ const CollectionsPage = () => {
 
     return (
         <div>
-            <h1>Collections</h1>
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <div className={styles.collectionTitle}>Collections</div>
+            <div className={styles.collectionCardContainer} >
                 {collections.map((collection) => (
                     <div 
                         key={collection.collectionId} 
                         style={{ margin: '10px', cursor: 'pointer' }}
                         onClick={() => router.push(`/collections/${collection.collectionId}`)}
                     >
-                        <img 
+                        <img className={styles.collectionThumbnail}
                             src={collection.collectionCoverPhoto} 
                             alt={collection.collectionName} 
-                            style={{ width: '200px', height: '200px' }} 
                         />
-                        <h3>{collection.collectionName}</h3>
+                        <div className={styles.collectionNmae}>{collection.collectionName}</div>
                     </div>
                 ))}
             </div>

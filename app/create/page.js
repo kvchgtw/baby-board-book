@@ -9,8 +9,21 @@ import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 
 
 
+const animalEasyList = ['cat', 'dog']
+const animalMediumList = ['otter', 'sloth']
+const animalHardList = ['elephant', 'toucan']
 
-const animalList = ['cat']
+
+const vehicleEasyList = ['truck', 'train']
+const vehicleMediumList = ['bicycle', 'motorcycle']
+const vehicleHardList = ['police car', 'ambulance']
+
+
+const fruitEasyList = ['apple', 'banana']
+const fruitMediumList = ['orange', 'pineapple']
+const fruitHardList = ['avocado', 'durian']
+
+
 let selectedCategorySaved = {};
 let selectedCategoryTitle = '';
 const bookCategories = [
@@ -54,9 +67,37 @@ const CreatePage = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [categorySelected, setCategorySelected] = useState(false);
   const collectionId = uuidv4()
-
-  
   const { user } = useUser();
+
+  const getListByCategoryAndDifficulty = (category, difficulty) => {
+    const categoryMap = {
+        Animals: { Easy: animalEasyList, Medium: animalMediumList, Hard: animalHardList },
+        Vehicles: { Easy: vehicleEasyList, Medium: vehicleMediumList, Hard: vehicleHardList },
+        Fruits: { Easy: fruitEasyList, Medium: fruitMediumList, Hard: fruitHardList },
+    };
+
+    return categoryMap[category][difficulty];
+};
+
+const generatePrompt = (category, itemName) => {
+  // Customize the prompt based on category
+  let description = '';
+  switch (category) {
+      case 'Animals':
+          description = 'one cute baby';
+          break;
+      case 'Vehicles':
+          description = 'cartoon, detailed';
+          break;
+      case 'Fruits':
+          description = 'fresh, vibrant, delicious';
+          break;
+      default:
+          description = 'colorful, high detailed';
+          break;
+  }
+  return `high quality, 8K Ultra HD, style cartoon, two-dimensional, ${description} ${itemName}`;
+};
 
   const handleCardSelect = (index) => {
       setSelectedCard(index);
@@ -66,12 +107,15 @@ const CreatePage = () => {
       console.log('selected category: ', selectedCategoryTitle)
   };
 
-  const handleDifficultySelect = async (level) => {
-    console.log('clicked handle difficulty level')
+  const handleDifficultySelect = async (difficultyLevel) => {
     try {
-      for (const animalName of animalList) {  // 遍歷 animalList
-        const prompt = `high quality, 8K Ultra HD, style cartoon, two-dimensional, one cute baby ${animalName}, colorful, high detailed`;
+      console.log('handleDifficultySelect 啟動')
+        const itemList = getListByCategoryAndDifficulty(selectedCategoryTitle, difficultyLevel);
+        console.log('new itemList: ', itemList)
+        for (const itemName of itemList) {  // 遍歷 animalList
+        const prompt = generatePrompt(selectedCategoryTitle, itemName);
         
+        console.log('prompt:', prompt)
       
       const response = await fetch('/api/fetchData', {
           method: 'POST',
@@ -80,13 +124,13 @@ const CreatePage = () => {
           },
           body: JSON.stringify({
             // 這裡填入你想發送到服務器的數據
-            imageHeight: 600,
-            imageWidth: 600,
+            imageHeight: 512,
+            imageWidth: 512,
             albedoXLmodelId: '2067ae52-33fd-4a82-bb92-c2c55e7d2786',
             prompt: prompt,
             negativePrompt: 'duplicate, multiple animals, repeated animal pattern, nude, nsfw, text, letters, too many feet, too many fingers, long neck, 2 heads, abstract, disfigured, deformed, toy, figure, framed, disfigured, bad art, deformed, poorly drawn, extra limbs, weird colors, 2 heads, elongated body, cropped image, out of frame, draft, deformed hands, twisted fingers, double image, malformed hands, multiple heads, extra limb, ugly, poorly drawn hands, missing limb, cut-off, over satured, grain, lowères, bad anatomy, poorly drawn face, mutation, mutated, floating limbs, disconnected limbs, out of focus, long body, disgusting, extra fingers, groos proportions, missing arms, mutated hands, cloned face, missing legs,',
             numImages: 1,
-            itemName: `${animalName}`,
+            itemName: `${itemName}`,
             userId: user.id,
             collectionId: collectionId,
             category: selectedCategoryTitle,
@@ -95,7 +139,7 @@ const CreatePage = () => {
   
         const data = await response.json();
         // const generationId = await data.sdGenerationJob.generationId
-        console.log(data); 
+        console.log('fetchData response:', data); 
           
         }
       } catch (error) {

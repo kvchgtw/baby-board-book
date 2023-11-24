@@ -23,7 +23,7 @@
     font-size: 60px;
     font-family: 'Noto Sans';
     font-weight: 700;
-    color: white;
+    color: #FAFAFA;
     margin: 0px 0px 5px;
 }
 
@@ -31,7 +31,7 @@
     font-size: 30px;
     font-family: 'Noto Sans';
     font-weight: 300;
-    color: white;
+    color: #FAFAFA;
     margin: 0px 0px 5px;
 }
 
@@ -39,9 +39,9 @@
     font-size: 24px;
     font-family: 'Noto Sans';
     font-weight: 500;
-    color: white;
+    color: #FAFAFA;
     border: 0px;
-    background-color: #FD913F;
+    background-color: #F5A524;
     border-radius: 5px;
     width: 220px;
     height: 50px;
@@ -50,6 +50,6 @@
 }
 
 .createCTAbtn:hover{
-    background-color: #ff9d52;
+    background-color: #F7B750;
     transition: 0.4s;
 }

@@ -2,16 +2,24 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 .card {
-    border: 0.5px solid #ddd;
+    border: 0.5px solid #3F3F46;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 0px;
-
+    background-color: #27272A;
     margin: 10px;
+    cursor: pointer;
 }
 .cardContent{
     padding-left: 15px;
 }
+.cardTitle{
+    color: #FAFAFA;
 
+}
+.cardSubtitle{
+    color: #FAFAFA;
+
+}
 /* Other styles for cardImage, cardContent, etc. */

@@ -2,6 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import db from '../../components/database/database'; // 确保正确导入了 Firestore 数据库实例
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import styles from '../../components/styles/Collections.module.css'; // Assuming you have a CSS module for styling
+
 
 function CollectionIdPage({ params }) {
   const collectionId = params.collectionId;
@@ -36,14 +41,26 @@ function CollectionIdPage({ params }) {
     return <div>Loading images...</div>;
   }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   return (
-    <div>
-      {images.map((image, index) => (
-        <div key={index}>
-          <img src={image.imageUrl} alt={image.itemName || 'Image'} />
-          <p>{image.itemName}</p> {/* 显示图片名称 */}
-        </div>
-      ))}
+    <div className={styles.imageContainer}>
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img className={styles.collectionImage} src={image.imageUrl} alt={image.itemName || 'Image'} />
+              {/* <div className={styles.textShadow}></div> */}
+              <div className={styles.itemNameText}>{image.itemName}</div> {/* 显示图片名称 */}
+          
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 }
