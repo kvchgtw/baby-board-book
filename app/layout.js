@@ -7,6 +7,7 @@ import Header from './components/header' // 注意這裡改為默認導入
 import './globals.css'
 import Footer from './components/Footer'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
