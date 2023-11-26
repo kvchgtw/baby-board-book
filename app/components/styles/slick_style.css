@@ -1,0 +1,22 @@
+.slick-dots li.slick-active button:before{
+    color:#FAFAFA !important;
+}
+
+.slick-dots li button:before{
+    color: #52525B !important;
+    opacity: 1 !important;
+}
+.slick-prev:before, .slick-next:before{
+    font-size: 40px;
+}
+
+
+.slick-prev{
+    z-index: 1000;
+
+}
+
+
+.slick-prev, .slick-next{
+    padding: 0px 80px 0px 40px;
+}

@@ -2,6 +2,9 @@ import Link from 'next/link'
 import Auth from './auth.js'
 import { UserButton, auth } from "@clerk/nextjs";
 import styles from './styles/Header.module.css'
+import NavCollections from './NavCollections.js'
+import NavCreate from './NavCreate.js'
+
 
 
 const Header = async () => {
@@ -11,6 +14,7 @@ const Header = async () => {
     
     <>
     <Auth />
+    
     <nav className={styles.nav}>
           <div className='flex items-center'>
               <Link href='/'>
@@ -30,17 +34,9 @@ const Header = async () => {
               )}
               {userId &&(
                 <>
-                    <Link href='/create'>
-                        <div className={styles.link}>
-                            Create
-                        </div>
-                    </Link>
+                    <NavCreate />
                     
-                    <Link href='/collections'>
-                        <div className={styles.link}>
-                            Collections
-                        </div>
-                    </Link>
+                    <NavCollections />
                 </>
               )}
               <div className='ml-auto'>

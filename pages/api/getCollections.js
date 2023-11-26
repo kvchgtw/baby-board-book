@@ -31,7 +31,7 @@ export default async function handler(req, res) {
                     // console.log(collectionsData)
                     return res.status(200).json(collectionsData);
                 } else {
-                    console.log('No documents found matching the criteria.');
+                    console.log('getCollection API: No documents found matching the criteria.');
                     return res.status(404).json({ message: "No images found." });
                 }
             } else {

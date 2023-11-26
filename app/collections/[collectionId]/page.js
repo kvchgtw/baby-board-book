@@ -7,6 +7,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from '../../components/styles/Collections.module.css';
 import { useUser } from "@clerk/clerk-react";
+import '../../components/styles/slick_style.css'
+
+
 
 function CollectionIdPage({ params }) {
   const collectionId = params.collectionId;
@@ -54,7 +57,8 @@ function CollectionIdPage({ params }) {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    
   };
 
   // Conditional rendering based on the availability of userId
@@ -76,7 +80,7 @@ function CollectionIdPage({ params }) {
           </Slider>
         </div>
       ) : (
-        <div className={styles.loaderText}>Loading images...</div>
+        <div className={styles.loaderText}>Loading images. Please wait for the images generation...</div>
       )}
     </>
   );

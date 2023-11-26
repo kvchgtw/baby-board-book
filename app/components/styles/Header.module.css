@@ -23,13 +23,13 @@
     font-weight: bold;
     color: #FAFAFA;
     text-transform: uppercase;
-    padding: 10px 15px;
+    padding: 10px 40px;
   }
 
   .SignItemsCenter{
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 10px 40px;
 
     
   }
@@ -40,8 +40,14 @@
     cursor: pointer;
   }
   
-  .link:hover {
+  /* .link:hover {
     color: #E4E4E7;
     transition: 0.3s;
+  } */
+
+  .link_active {
+    color: #FAFAFA;
+    font-weight: 800;
   }
+  
   

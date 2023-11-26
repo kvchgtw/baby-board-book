@@ -9,19 +9,19 @@ import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 
 
 
-const animalEasyList = ['cat', 'dog']
-const animalMediumList = ['otter', 'sloth']
-const animalHardList = ['elephant', 'toucan']
+const animalEasyList = ['cat', 'dog', 'fox']
+const animalMediumList = ['otter', 'sloth', 'panda']
+const animalHardList = ['Chameleon', 'hippopotamus', 'Raccoon']
 
 
-const vehicleEasyList = ['truck']
-const vehicleMediumList = ['bicycle', 'motorcycle']
-const vehicleHardList = ['police car', 'ambulance']
+const vehicleEasyList = ['truck', 'airplane', 'school bus']
+const vehicleMediumList = ['bicycle', 'motorcycle', 'yacht']
+const vehicleHardList = ['police car', 'ambulance', 'helicopter']
 
 
-const fruitEasyList = ['apple', 'banana']
-const fruitMediumList = ['orange', 'pineapple']
-const fruitHardList = ['avocado', 'durian']
+const fruitEasyList = ['strawberry', 'banana', 'lemon']
+const fruitMediumList = ['orange', 'pineapple', 'watermelon']
+const fruitHardList = ['avocado', 'durian', 'blueberry']
 
 
 let selectedCategorySaved = {};
@@ -124,8 +124,8 @@ const generatePrompt = (category, itemName) => {
           },
           body: JSON.stringify({
             // 這裡填入你想發送到服務器的數據
-            imageHeight: 500,
-            imageWidth: 500,
+            imageHeight: 512,
+            imageWidth: 512,
             albedoXLmodelId: '2067ae52-33fd-4a82-bb92-c2c55e7d2786',
             prompt: prompt,
             negativePrompt: 'duplicate, multiple animals, repeated animal pattern, nude, nsfw, text, letters, too many feet, too many fingers, long neck, 2 heads, abstract, disfigured, deformed, toy, figure, framed, disfigured, bad art, deformed, poorly drawn, extra limbs, weird colors, 2 heads, elongated body, cropped image, out of frame, draft, deformed hands, twisted fingers, double image, malformed hands, multiple heads, extra limb, ugly, poorly drawn hands, missing limb, cut-off, over satured, grain, lowères, bad anatomy, poorly drawn face, mutation, mutated, floating limbs, disconnected limbs, out of focus, long body, disgusting, extra fingers, groos proportions, missing arms, mutated hands, cloned face, missing legs,',
