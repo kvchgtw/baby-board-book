@@ -58,6 +58,7 @@ function CollectionIdPage({ params }) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    touchThreshold: 10000,
     
   };
 

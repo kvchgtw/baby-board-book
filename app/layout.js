@@ -3,6 +3,7 @@
 // import { Suspense } from 'react'
 import { Noto_Sans } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
+import { dark } from '@clerk/themes';
 import Header from './components/header' // 注意這裡改為默認導入
 import './globals.css'
 import Footer from './components/Footer'
@@ -20,7 +21,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      baseTheme: dark,
+      variables: { colorPrimary: '#F5A524' },
+
+    }}>
       <html lang="en">
 
         <body className={noto.className}>

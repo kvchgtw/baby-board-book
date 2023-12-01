@@ -9,19 +9,32 @@ import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 
 
 
-const animalEasyList = ['cat', 'dog', 'fox']
-const animalMediumList = ['otter', 'sloth', 'panda']
-const animalHardList = ['Chameleon', 'hippopotamus', 'Raccoon']
+const animalEasyList = ['cat', 'dog', 'fox', "elephant", "lion", "tiger", "zebra", "giraffe", "bear", 
+"wolf"]
+
+const animalMediumList = ['otter', 'sloth', 'panda', "leopard", "meerkat" 
+, "eagle", "penguin", ]
+
+const animalHardList = [ 'hippopotamus', 'Raccoon',"parrot", "buffalo", "camel", "donkey", 
+"falcon", "hamster"]
 
 
-const vehicleEasyList = ['truck', 'airplane', 'school bus']
-const vehicleMediumList = ['bicycle', 'motorcycle', 'yacht']
-const vehicleHardList = ['police car', 'ambulance', 'helicopter']
+const vehicleEasyList = ['truck', 'airplane', 'school bus', "train",  "boat", "garbage truck", "sports car", "ice cream truck", "scooter", 'taxi']
+const vehicleMediumList = ['bicycle', 'motorcycle', 'yacht', "bulldozer", "canoe", "van", "cement mixer", 'rocket']
+const vehicleHardList = ['police car', 'ambulance', 'helicopter', 'fire engine', "tractor", "Tesla Model 3", 'dump truck', 'private jet', "snowmobile", 'Aircraft carrier']
 
 
-const fruitEasyList = ['strawberry', 'banana', 'lemon']
-const fruitMediumList = ['orange', 'pineapple', 'watermelon']
-const fruitHardList = ['avocado', 'durian', 'blueberry']
+const fruitEasyList = ['strawberry', 'banana', 'lemon', "orange", "mango", "grape", "pineapple", "watermelon", "cherry", "peach"]
+const fruitMediumList = ["pear", "plum", "grapefruit", "raspberry", "dragon fruit", "passion fruit", "lychee", "papaya", "guava", "cranberry"]
+const fruitHardList = ['avocado', 'durian', 'blueberry', 'persimmon', 'kumquat', 'mulberry', 'hami melon', "tangerine", 'star fruit', 'elderberry']
+
+
+const sleepAnimalEasyList = ['cat', 'dog', 'fox', "lion", "tiger", "bear", "wolf"]
+
+const sleepAnimalMediumList = ['otter', 'sloth', 'panda', "leopard", "meerkat", "penguin", ]
+
+const sleepAnimalHardList = [ 'Siberian Husky', 'Bulldog',"Shiba inu", "buffalo", "Saint Bernard", ]
+
 
 
 let selectedCategorySaved = {};
@@ -43,7 +56,11 @@ const bookCategories = [
         subtitle: "Yummy fruits"
       ,
     },
-    
+    {
+      title: "SleepingAnimals",
+      img: "/images/polarBear_250_250.jpg",
+      subtitle: "Say good night to animals!",
+    },
 ];
 const difficultyLevels = [
   {
@@ -74,7 +91,18 @@ const CreatePage = () => {
         Animals: { Easy: animalEasyList, Medium: animalMediumList, Hard: animalHardList },
         Vehicles: { Easy: vehicleEasyList, Medium: vehicleMediumList, Hard: vehicleHardList },
         Fruits: { Easy: fruitEasyList, Medium: fruitMediumList, Hard: fruitHardList },
+        SleepingAnimals: { Easy: sleepAnimalEasyList, Medium: sleepAnimalMediumList, Hard: sleepAnimalHardList },
+
     };
+    if (!categoryMap[category]) {
+      console.error(`Category '${category}' not found.`);
+      return []; // or handle the error as appropriate
+  }
+
+  if (!categoryMap[category][difficulty]) {
+      console.error(`Difficulty level '${difficulty}' not found in category '${category}'.`);
+      return []; // or handle the error as appropriate
+  }
 
     return categoryMap[category][difficulty];
 };
@@ -92,10 +120,15 @@ const generatePrompt = (category, itemName) => {
       case 'Fruits':
           description = 'fresh, vibrant, delicious';
           break;
+      case 'SleepingAnimals':
+          description = 'night, bed, closed eyes, asleep, one sleeping cute baby';
+          break;
       default:
           description = 'colorful, high detailed';
           break;
   }
+  console.log('description: ', description)
+
   return `high quality, 8K Ultra HD, style cartoon, two-dimensional, ${description} ${itemName}`;
 };
 
@@ -128,7 +161,7 @@ const generatePrompt = (category, itemName) => {
             imageWidth: 512,
             albedoXLmodelId: '2067ae52-33fd-4a82-bb92-c2c55e7d2786',
             prompt: prompt,
-            negativePrompt: 'duplicate, multiple animals, repeated animal pattern, nude, nsfw, text, letters, too many feet, too many fingers, long neck, 2 heads, abstract, disfigured, deformed, toy, figure, framed, disfigured, bad art, deformed, poorly drawn, extra limbs, weird colors, 2 heads, elongated body, cropped image, out of frame, draft, deformed hands, twisted fingers, double image, malformed hands, multiple heads, extra limb, ugly, poorly drawn hands, missing limb, cut-off, over satured, grain, lowères, bad anatomy, poorly drawn face, mutation, mutated, floating limbs, disconnected limbs, out of focus, long body, disgusting, extra fingers, groos proportions, missing arms, mutated hands, cloned face, missing legs,',
+            negativePrompt: 'duplicate, multiple animals, repeated animal pattern, nude, nsfw, text, letters, too many feet, too many fingers, long neck, 2 heads, abstract, disfigured, deformed, toy, figure, framed, disfigured, bad art, deformed, poorly drawn, extra limbs, weird colors, 2 heads, elongated body, cropped image, out of frame, draft, deformed hands, twisted fingers, double image, malformed hands, multiple heads, extra limb, ugly, poorly drawn hands, missing limb, cut-off, over satured, grain, lowères, bad anatomy, poorly drawn face, mutation, mutated, floating limbs, disconnected limbs, out of focus, long body, disgusting, extra fingers, groos proportions, missing arms, mutated hands, cloned face, missing legs, animal patterns, patterns,',
             numImages: 1,
             itemName: `${itemName}`,
             userId: user.id,
