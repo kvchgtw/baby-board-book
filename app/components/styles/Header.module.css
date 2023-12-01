@@ -25,20 +25,59 @@
     text-transform: uppercase;
     padding: 10px 40px;
   }
+@media screen and (min-width: 768px) and (max-width: 3840px){
+  .navItem {
+    text-decoration: none;
+    font-size: 1.125rem; /* Tailwind's text-lg */
+    font-weight: bold;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 40px;
+  }
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .navItem {
+    text-decoration: none;
+    font-size: 14px; /* Tailwind's text-lg */
+    font-weight: bold;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 10px 10px 20px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 3840px){
 
   .SignItemsCenter{
     display: flex;
     align-items: center;
     padding: 10px 40px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .SignItemsCenter{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+  }
 
-    
-  }
-  
+}
+
+
+.link {
+  color: #FAFAFA; /* Tailwind's text-gray-300 */
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
   .link {
-    color: #FAFAFA; /* Tailwind's text-gray-300 */
-    margin-right: 1rem;
-    cursor: pointer;
+    font-size: 16px;
+
   }
+
+}
   
   /* .link:hover {
     color: #E4E4E7;

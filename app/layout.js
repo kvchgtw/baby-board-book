@@ -1,14 +1,17 @@
 //layout.js 可以把每個頁面都有的元素，套用在所有頁面上
 //每個頁面不同的內容，會從{children}中代入。
-
-import { Inter } from 'next/font/google'
+// import { Suspense } from 'react'
+import { Noto_Sans } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import Header from './components/header' // 注意這裡改為默認導入
 import './globals.css'
 import Footer from './components/Footer'
 
 
-const inter = Inter({ subsets: ['latin'] })
+const noto = Noto_Sans({ 
+  subsets: ['latin'],
+  weight: ['100', '200', '300','400', '500', '600','700', '800','900']
+})
 
 export const metadata = {
   title: 'AI Baby Board Book',
@@ -20,9 +23,9 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
 
-        <body className={inter.className}>
+        <body className={noto.className}>
         <Header />
-          {children}
+            {children}
           <Footer />
         </body>
       </html>

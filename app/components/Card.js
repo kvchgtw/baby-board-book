@@ -8,7 +8,7 @@ const Card = ({ img, title, subtitle, selected, onSelect }) => {
     return (
         <div className={cardStyles} onClick={onSelect}>
             {img && <div className={styles.cardImage}>
-                <Image src={img} alt={title} width={220} height={220} objectFit="cover" />
+                <Image src={img} alt={title} width={220} height={220} style={{objectFit:"cover"}}  className={styles.cardImage}/>
             </div>}
             <div className={styles.cardContent}>
                 {title && <h2 className={styles.cardTitle}>{title}</h2>}

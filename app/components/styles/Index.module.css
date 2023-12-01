@@ -1,11 +1,19 @@
 .homePageBackground {
-    background-image: url('./images/coverphoto_800.png'); /* 確保路徑正確 */
+    background-image: url('./images/background_fox.jpg'); /* 確保路徑正確 */
     width: 100%;
     height: 800px; /* 根據需要設置適當的高度 */
     background-size: cover; /* 或使用 'contain' 根據需求 */
     background-repeat: no-repeat;
     background-position: right;
   }
+
+@media screen and (min-width: 300px) and (max-width: 1200px){
+.homePageBackground {
+    background-image: url('./images/mobile_background_fox_down.jpg'); /* 確保路徑正確 */
+    background-position: center;
+}
+}
+
 .homePageElementContainer{
     display: flex;
     justify-content: space-between;
@@ -18,6 +26,21 @@
     display: flex;
     align-items: center;
 }
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .mainElement{
+        margin: 160px auto;
+       
+    }
+
+}
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .mainElement{
+        margin: 100px auto;
+       
+    }
+
+}
+
 
 .titleText{
     font-size: 60px;
@@ -27,12 +50,39 @@
     margin: 0px 0px 5px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .titleText{
+        font-size: 42px;
+    }
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .titleText{
+        font-size: 34px;
+    }
+
+}
+
 .subTitleText{
     font-size: 30px;
     font-family: 'Noto Sans';
     font-weight: 300;
     color: #FAFAFA;
     margin: 0px 0px 5px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .subTitleText{
+        font-size: 20px;
+    }
+
+}
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .subTitleText{
+        font-size: 16px;
+    }
+
 }
 
 .createCTAbtn{

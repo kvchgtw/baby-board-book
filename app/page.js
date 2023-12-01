@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import styles from './components/styles/Index.module.css'
+
+
 export default function homepage(){
   return(
     <>

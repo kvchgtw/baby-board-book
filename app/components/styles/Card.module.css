@@ -11,6 +11,22 @@
     margin: 10px;
     cursor: pointer;
 }
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .card {
+        width: 350px;
+        height: 100px;
+        position: relative;
+    }
+}
+@media screen and (min-width: 300px) and (max-width: 767px){
+
+.cardImage{
+    width: 100px;
+    height: 100px;
+}
+
+}
+
 .cardContent{
     padding-left: 15px;
 }
@@ -18,8 +34,31 @@
     color: #FAFAFA;
 
 }
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .cardTitle{
+        position: absolute;
+        bottom: 35px;
+        left: 115px;
+        font-size: 20px;
+
+    }
+
+}
+
 .cardSubtitle{
     color: #FAFAFA;
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .cardSubtitle{
+        position: absolute;
+        bottom: 10px;
+        left: 115px;
+        font-size: 14px;
+
+
+    }
 
 }
 /* Other styles for cardImage, cardContent, etc. */

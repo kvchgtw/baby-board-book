@@ -41,33 +41,35 @@ const CollectionsPage = () => {
 
     return (
         <>
-            {isNotEmpty ? (
-                <div>
-                    <div className={styles.collectionCardContainer} >
-                        {collections.map((collection) => (
-                            <div 
-                                key={collection.collectionId} 
-                                style={{ margin: '10px', cursor: 'pointer' }}
-                                onClick={() => router.push(`/collections/${collection.collectionId}`)}
-                            >
-                                <img className={styles.collectionThumbnail}
-                                    src={collection.collectionCoverPhoto} 
-                                    alt={collection.collectionName} 
-                                />
-                                <div className={styles.collectionNmae}>{collection.collectionName}</div>
+                {isNotEmpty ? (
+                        <div>
+                            <div className={styles.collectionCardContainer} >
+                                {collections.map((collection) => (
+                                    <div 
+                                        key={collection.collectionId} 
+                                        style={{ margin: '10px', cursor: 'pointer' }}
+                                        onClick={() => router.push(`/collections/${collection.collectionId}`)}
+                                    >
+                                        <img className={styles.collectionThumbnail}
+                                            src={collection.collectionCoverPhoto} 
+                                            alt={collection.collectionName} 
+                                        />
+                                        <div className={styles.collectionNmae}>{collection.collectionName}</div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                </div>) : (
-                    <><div className={styles.emptyDataError}>You have no collection now. Press the Create button to try out.</div>
-                        <div className={styles.buttonContainer}>
-                            <Link href= '/create'>
-                                <button className={styles.createCTAbtn}> Create Now </button>
-                            </Link>
                         </div>
-                    </>
-                )
-            }
+                    ) : (
+                        <><div className={styles.emptyDataError}>You have no collection now. Press the Create button to try out.</div>
+                            <div className={styles.buttonContainer}>
+                                <Link href= '/create'>
+                                    <button className={styles.createCTAbtn}> Create Now </button>
+                                </Link>
+                            </div>
+                        </>
+                    )
+                }
+
         </>
     );
 };
