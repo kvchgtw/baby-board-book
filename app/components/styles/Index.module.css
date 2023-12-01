@@ -44,7 +44,6 @@
 
 .titleText{
     font-size: 60px;
-    font-family: 'Noto Sans';
     font-weight: 700;
     color: #FAFAFA;
     margin: 0px 0px 5px;
@@ -66,7 +65,6 @@
 
 .subTitleText{
     font-size: 30px;
-    font-family: 'Noto Sans';
     font-weight: 300;
     color: #FAFAFA;
     margin: 0px 0px 5px;
@@ -87,7 +85,6 @@
 
 .createCTAbtn{
     font-size: 24px;
-    font-family: 'Noto Sans';
     font-weight: 500;
     color: #FAFAFA;
     border: 0px;
