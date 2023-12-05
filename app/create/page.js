@@ -8,9 +8,10 @@ import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 
 
+const animalEasyList = ['cat', 'dog', 'fox']
 
-const animalEasyList = ['cat', 'dog', 'fox', "elephant", "lion", "tiger", "zebra", "giraffe", "bear", 
-"wolf"]
+// const animalEasyList = ['cat', 'dog', 'fox', "elephant", "lion", "tiger", "zebra", "giraffe", "bear", 
+// "wolf"]
 
 const animalMediumList = ['otter', 'sloth', 'panda', "leopard", "meerkat" 
 , "eagle", "penguin", ]

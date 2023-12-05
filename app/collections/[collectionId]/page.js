@@ -27,7 +27,7 @@ function CollectionIdPage({ params }) {
 
     const q = query(
       collection(db, "images"),
-      where("imageUrl", "!=", ""),
+      // where("imageUrl", "!=", ""),
       where("collectionId", "==", collectionId),
       where('userId', '==', userId)
     );
@@ -47,10 +47,14 @@ function CollectionIdPage({ params }) {
   }, [collectionId, userId]);
 
   function loader(imagesArray) {
-    if (imagesArray.length !== 0) {
+    const allImagesValid = imagesArray.length > 0 && imagesArray.every(image => image.imageUrl !== "");
+  
+    if (allImagesValid) {
       setAllLoaded(true);
     }
   }
+  
+  
 
   const settings = {
     dots: true,
@@ -81,7 +85,11 @@ function CollectionIdPage({ params }) {
           </Slider>
         </div>
       ) : (
-        <div className={styles.loaderText}>Loading images. Please wait for the images generation...</div>
+        <>
+          <div className={styles.loaderText}>Loading, just a moment...</div>
+          <div className={styles.loaderQuote}>"Through shared reading, we gift our children a lens to understand the world, fostering empathy, knowledge, and limitless imagination." - An Anonymous Parent</div>
+          <div className={styles.imageLoader}></div>
+        </>
       )}
     </>
   );
