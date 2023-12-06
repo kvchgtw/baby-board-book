@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from '../../components/styles/Collections.module.css';
 import { useUser } from "@clerk/clerk-react";
 import '../../components/styles/slick_style.css'
+import Link from 'next/link';
 
 
 
@@ -83,6 +84,9 @@ function CollectionIdPage({ params }) {
               </div>
             ))}
           </Slider>
+          <Link href={`/challenges/${collectionId}`}>
+          <button className={styles.challenge__btn}>Challenge Time</button>
+          </Link>
         </div>
       ) : (
         <>

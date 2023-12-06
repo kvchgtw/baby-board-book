@@ -6,6 +6,24 @@
     margin-bottom: 50px;
 }
 
+.challenge__imageContainer{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: #18181B;
+    color: #FAFAFA;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.challenge__singleImageContainer{
+    height: 260px;
+    border: 3px solid #18181B;
+
+}
+
 @media screen and (min-width: 300px) and (max-width: 767px){
     .imageContainer{
         padding: 15px 20px;
@@ -22,6 +40,15 @@
         width: 350px;
         height: 350px;
     }
+}
+
+.challenge__Image{
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    padding: 5px;
+
+
 }
 
 .textContainer{
@@ -127,6 +154,15 @@
     padding: 40px;
 }
 
+.challenge__TitleText
+{ 
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    padding: 35px;
+    font-weight: 600;
+}
+
 .loaderQuote{
     color: white;
     font-size: 22px;
@@ -176,3 +212,59 @@
     
       }
   @keyframes s3 {to{transform: rotate(1turn)}}
+
+  .challenge__btn{
+    font-size: 24px;
+    font-weight: 500;
+    color: #FAFAFA;
+    border: 0px;
+    background-color: #F5A524;
+    border-radius: 5px;
+    width: 220px;
+    height: 50px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.selectedImage {
+    border: 3px solid #1899D6; /* or any style you prefer for highlighting */
+    height: 260px;
+    border-radius: 15px;
+  }
+  
+  .resultMessage {
+    text-align: center;
+    color: #FAFAFA;
+  }
+  
+  
+  .confirmButton__container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+  .confirmButton{
+    width: 100px;
+    height: 60px;
+    font-size: 22px;
+    border-radius: 10px;
+    border: 0px;
+    cursor: pointer;
+  }
+
+  .challenge__icon__backgorund{
+    width: 100px;
+    height: 100px;
+    background-color: #1899D6;
+  }
+
+  .resultIcon{
+    position: relative;
+  }
+
+  .challenge__Icon__container{
+    width: 100px;
+    height: 100px;
+    background-color: #1899D6;
+  }
