@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useUser } from "@clerk/clerk-react";
 import styles from '../components/styles/Collections.module.css'; // Assuming you have a CSS module for styling
 import Link from 'next/link'
+import Footer from '../components/Footer'
+
 
 const CollectionsPage = () => {
     const { user } = useUser();
@@ -69,7 +71,7 @@ const CollectionsPage = () => {
                         </>
                     )
                 }
-
+            <Footer />
         </>
     );
 };

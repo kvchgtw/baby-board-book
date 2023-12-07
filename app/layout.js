@@ -6,7 +6,6 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes';
 import Header from './components/header' // 注意這裡改為默認導入
 import './globals.css'
-import Footer from './components/Footer'
 
 
 const noto = Noto_Sans({ 
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
         <body className={noto.className}>
         <Header />
             {children}
-          <Footer />
         </body>
       </html>
     </ClerkProvider>

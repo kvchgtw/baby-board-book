@@ -9,6 +9,7 @@ import '../../components/styles/slick_style.css';
 import greenCheck from '../../components/styles/images/check_correct.svg'; // Adjust the path as necessary
 import redCross from '../../components/styles/images/cross_incorrect.svg'; // Adjust the path as necessary
 import Image from 'next/image';
+import Modal_Quiz_Finish from '../../components/Modal_Finish_Quiz'
 
 
 function ChallengePage({ params }) {
@@ -23,8 +24,13 @@ function ChallengePage({ params }) {
   const [resultIcon, setResultIcon] = useState('')
   const [resultMessage, setResultMessage] = useState('');
   const [buttonText, setButtonText] = useState('Check');
-  const [buttonColor, setButtonColor] = useState(''); // Additional state for button color
+  const [confirmButtonColorStyles, setConfirmButtonColorStyles] = useState('')
+  const [containerStyle, setcontainerStyle] = useState(styles.confirmButton__container)
+  const [challengeHrStyle, setchallengeHrStyle] = useState(styles.challenge__hr)
+  const [resultIconClass, setResultIconClass] = useState('');
   const [allLoaded, setAllLoaded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   const router = useRouter();
   const { user } = useUser();
   const userId = user?.id;
@@ -88,13 +94,17 @@ function ChallengePage({ params }) {
     const isCorrect = selectedImage === quizItem;
     if (isCorrect) {
       setCorrectAnswers(prevCount => prevCount + 1);
-      setButtonColor('#93D333');
+      setConfirmButtonColorStyles(styles.challenge__green__confirmButton)
       setResultIcon(greenCheck)
+      setResultIconClass(styles.greenCheckIcon);
     } else {
-      setButtonColor('#EE5555');
+      setConfirmButtonColorStyles(styles.challenge__red__confirmButton)
       setResultIcon(redCross)
+      setResultIconClass(styles.redCrossIcon);
 
     }
+    setchallengeHrStyle(styles.challenge__hr__hide)
+    setcontainerStyle(styles.confirmButton__container__clicked)
     setButtonText('Next');
     setShowResult(true);
     setResultMessage(isCorrect ? "Correct! You selected the right image." : "Oops! That's not the right image.");
@@ -105,14 +115,20 @@ function ChallengePage({ params }) {
       setQuestionCount(prevCount => prevCount + 1);
       setupQuiz(images);
     } else {
-      alert(`Round over! You answered ${correctAnswers} out of 3 questions correctly.`);
-      router.push('/collections');
+      // alert(`Round over! You answered ${correctAnswers} out of 3 questions correctly.`);
+      setShowModal(true);
+      // router.push('/collections');
     }
     setShowResult(false);
     setSelectedImage('');
-    setButtonColor('');
     setResultIcon('');
+    setResultIconClass('');
     setButtonText('Check');
+    setcontainerStyle(styles.confirmButton__container)
+    setchallengeHrStyle(styles.challenge__hr)
+    setConfirmButtonColorStyles('')
+
+
   };
 
   if (!userId) {
@@ -132,26 +148,32 @@ function ChallengePage({ params }) {
               </div>
             ))}
           </div>
-          <div className={styles.confirmButton__container}>
-            
-            
+          <Modal_Quiz_Finish show={showModal} >
+              <div className={styles.modalText}>Perfect! You answered {correctAnswers} out of 3 questions correctly.</div>
+          </Modal_Quiz_Finish>
+          <div className={`${styles.challenge__hr} ${challengeHrStyle}`}></div>
+          <div className={`${styles.confirmButton__container} ${containerStyle}`}>
+           
             {showResult && (
               <>
-              <div className={styles.challenge__Icon__container}>
-                <Image src={resultIcon}  className={styles.resultIcon} />
-              </div>
-              <div className={styles.resultMessage}>
-                <p>{resultMessage}</p>
-              </div>
+                <div className={styles.challenge__result__container}>
+                  <div className={styles.challenge__Icon__container}>
+                    <Image priority src={resultIcon}  className={`${styles.resultIcon} ${resultIconClass}`} />
+                  </div>
+                  <div className={styles.resultMessage}>
+                    {resultMessage}
+                  </div>
+                </div>
               </>
             )}
             <button onClick={handleButtonClick} 
-                    className={styles.confirmButton} 
-                    style={{ backgroundColor: buttonColor }}
+                    className={`${styles.confirmButton} ${confirmButtonColorStyles}` }
                     disabled={!selectedImage && !showResult}>
               {buttonText}
             </button>
           </div>
+
+        
           
         </>
       ) : (
@@ -166,11 +188,3 @@ function ChallengePage({ params }) {
 }
 
 export default ChallengePage;
-
-
-
-
-
-
-
-

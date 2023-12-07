@@ -9,6 +9,7 @@ import styles from '../../components/styles/Collections.module.css';
 import { useUser } from "@clerk/clerk-react";
 import '../../components/styles/slick_style.css'
 import Link from 'next/link';
+import Footer from '../../components/Footer'
 
 
 
@@ -73,7 +74,7 @@ function CollectionIdPage({ params }) {
   }
 
   return (
-    <>
+    <><>
       {allLoaded ? (
         <div className={styles.imageContainer}>
           <Slider {...settings}>
@@ -85,7 +86,7 @@ function CollectionIdPage({ params }) {
             ))}
           </Slider>
           <Link href={`/challenges/${collectionId}`}>
-          <button className={styles.challenge__btn}>Challenge Time</button>
+            <button className={styles.challenge__btn}>Challenge Time</button>
           </Link>
         </div>
       ) : (
@@ -95,7 +96,8 @@ function CollectionIdPage({ params }) {
           <div className={styles.imageLoader}></div>
         </>
       )}
-    </>
+    </><Footer /></>
+
   );
 }
 

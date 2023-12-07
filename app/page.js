@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import styles from './components/styles/Index.module.css'
+import Footer from './components/Footer'
+
 
 
 export default function homepage(){
@@ -25,10 +27,9 @@ export default function homepage(){
           </div>
         </div>
       </div>
-
-
     </div>
-    <div></div>
+    <Footer />
+
     </>
   )
 }

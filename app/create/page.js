@@ -6,6 +6,7 @@ import Card from '../components/Card';
 import { useUser } from "@clerk/clerk-react";
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
+import Footer from '../components/Footer'
 
 
 const animalEasyList = ['cat', 'dog', 'fox']
@@ -214,6 +215,7 @@ const generatePrompt = (category, itemName) => {
           ))
         )}
       </div>
+      <Footer />
     </>
   );
 };
