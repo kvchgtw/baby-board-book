@@ -11,8 +11,8 @@ const Card = ({ img, title, subtitle, selected, onSelect }) => {
                 <Image src={img} alt={title} width={220} height={220} style={{objectFit:"cover"}}  className={styles.cardImage}/>
             </div>}
             <div className={styles.cardContent}>
-                {title && <h2 className={styles.cardTitle}>{title}</h2>}
-                {subtitle && <p className={styles.cardSubtitle}>{subtitle}</p>}
+                {title && <div className={styles.cardTitle}>{title}</div>}
+                {subtitle && <div className={styles.cardSubtitle}>{subtitle}</div>}
             </div>
         </div>
     );

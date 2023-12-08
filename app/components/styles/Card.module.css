@@ -10,6 +10,8 @@
     background-color: #27272A;
     margin: 10px;
     cursor: pointer;
+    width: 220px;
+    height: 305px;
 }
 @media screen and (min-width: 300px) and (max-width: 767px){
     .card {
@@ -32,14 +34,18 @@
 }
 .cardTitle{
     color: #FAFAFA;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 50px;
 
 }
 @media screen and (min-width: 300px) and (max-width: 767px){
     .cardTitle{
         position: absolute;
-        bottom: 35px;
+        bottom: 50px;
         left: 115px;
         font-size: 20px;
+        font-weight: 700;
 
     }
 
@@ -47,13 +53,17 @@
 
 .cardSubtitle{
     color: #FAFAFA;
+    font-size: 14px;
+    line-height: 14px;
+
+
 
 }
 
 @media screen and (min-width: 300px) and (max-width: 767px){
     .cardSubtitle{
         position: absolute;
-        bottom: 10px;
+        bottom: 20px;
         left: 115px;
         font-size: 14px;
 

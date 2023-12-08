@@ -38,29 +38,33 @@ const sleepAnimalMediumList = ['otter', 'sloth', 'panda', "leopard", "meerkat", 
 const sleepAnimalHardList = [ 'Siberian Husky', 'Bulldog',"Shiba inu", "buffalo", "Saint Bernard", ]
 
 
-
+let selectedCategoryDisplayedNameSaved = {};
 let selectedCategorySaved = {};
 let selectedCategoryTitle = '';
 const bookCategories = [
     {
+        displayedTitle: "Animals",
         title: "Animals",
-        img: "/images/polarBear_250_250.jpg",
+        img: "/images/polarBear_250_250_small.jpg",
         subtitle: "Say hello to cute animals!",
     },
     {
+        displayedTitle: "Vehicles",
         title: "Vehicles",
-        img: "/images/truck250.jpg",
+        img: "/images/truck250_small.jpg",
         subtitle: "Big and small, explore all",
     },
     {
+        displayedTitle: "Fruits",      
         title: "Fruits",
-        img: "/images/fruits250.jpg",
+        img: "/images/fruits250_small.jpg",
         subtitle: "Yummy fruits"
       ,
     },
     {
+      displayedTitle: "Sleeping Animals",      
       title: "SleepingAnimals",
-      img: "/images/polarBear_250_250.jpg",
+      img: "/images/sleep_cat.jpg",
       subtitle: "Say good night to animals!",
     },
 ];
@@ -138,6 +142,7 @@ const generatePrompt = (category, itemName) => {
       setSelectedCard(index);
       setCategorySelected(true);  // Set category as selected
       selectedCategorySaved = bookCategories[index]
+      selectedCategoryDisplayedNameSaved = selectedCategorySaved.displayedTitle
       selectedCategoryTitle = selectedCategorySaved.title
       console.log('selected category: ', selectedCategoryTitle)
   };
@@ -168,7 +173,7 @@ const generatePrompt = (category, itemName) => {
             itemName: `${itemName}`,
             userId: user.id,
             collectionId: collectionId,
-            category: selectedCategoryTitle,
+            category: selectedCategoryDisplayedNameSaved,
           }),
         });
   
@@ -207,7 +212,7 @@ const generatePrompt = (category, itemName) => {
             <Card
               key={index}
               img={bookCategory.img}
-              title={bookCategory.title}
+              title={bookCategory.displayedTitle}
               subtitle={bookCategory.subtitle}
               selected={selectedCard === index}
               onSelect={() => handleCardSelect(index)} 

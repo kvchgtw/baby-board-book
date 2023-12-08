@@ -9,7 +9,6 @@ import styles from '../../components/styles/Collections.module.css';
 import { useUser } from "@clerk/clerk-react";
 import '../../components/styles/slick_style.css'
 import Link from 'next/link';
-import Footer from '../../components/Footer'
 
 
 
@@ -74,29 +73,29 @@ function CollectionIdPage({ params }) {
   }
 
   return (
-    <><>
-      {allLoaded ? (
-        <div className={styles.imageContainer}>
-          <Slider {...settings}>
-            {images.map((image, index) => (
-              <div key={index}>
-                <img className={styles.collectionImage} src={image.imageUrl} alt={image.itemName || 'Image'} />
-                <div className={styles.itemNameText}>{image.itemName}</div>
-              </div>
-            ))}
-          </Slider>
-          <Link href={`/challenges/${collectionId}`}>
-            <button className={styles.challenge__btn}>Challenge Time</button>
-          </Link>
-        </div>
-      ) : (
         <>
-          <div className={styles.loaderText}>Loading, just a moment...</div>
-          <div className={styles.loaderQuote}>"Through shared reading, we gift our children a lens to understand the world, fostering empathy, knowledge, and limitless imagination." - An Anonymous Parent</div>
-          <div className={styles.imageLoader}></div>
+          {allLoaded ? (
+            <div className={styles.imageContainer}>
+              <Slider {...settings}>
+                {images.map((image, index) => (
+                  <div key={index}>
+                    <img className={styles.collectionImage} src={image.imageUrl} alt={image.itemName || 'Image'} />
+                    <div className={styles.itemNameText}>{image.itemName}</div>
+                  </div>
+                ))}
+              </Slider>
+              <Link href={`/challenges/${collectionId}`}>
+                <button className={styles.challenge__btn}>Quiz</button>
+              </Link>
+            </div>
+          ) : (
+            <>
+              <div className={styles.loaderText}>Loading, just a moment...</div>
+              <div className={styles.loaderQuote}>"Through shared reading, we gift our children a lens to understand the world, fostering empathy, knowledge, and limitless imagination." - An Anonymous Parent</div>
+              <div className={styles.imageLoader}></div>
+            </>
+          )}
         </>
-      )}
-    </><Footer /></>
 
   );
 }

@@ -1,5 +1,5 @@
 .imageContainer{
-    padding: 15px 60px;
+    padding: 0px 60px;
     background-color: #18181B;
     color: #FAFAFA;
     text-align: center;
@@ -214,17 +214,33 @@
   @keyframes s3 {to{transform: rotate(1turn)}}
 
   .challenge__btn{
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
-    color: #FAFAFA;
+    color: #131F24;
     border: 0px;
-    background-color: #F5A524;
-    border-radius: 5px;
-    width: 220px;
-    height: 50px;
+    background-color: #93D333;
+    border-radius: 16px;
+    width: 150px;
+    height: 46px;
     cursor: pointer;
-    margin: 30px;
+    margin: 20px 0 30px;
+    transition: margin-top 0.3s ease; 
+    box-shadow: 0px 3px rgb(121, 185, 51);
 }
+
+.challenge__btn:hover{
+    background-color: #A2E838;
+    color: #152228;
+    box-shadow: 0px 3px #85CB38;
+
+  }
+
+  .challenge__btn:active{
+    margin: 24px 0 30px;
+    transition: margin-bottom 0.3s ease; 
+    box-shadow: 0px 0px red ;
+
+  }
 
 .selectedImage {
     border: 3px solid #1899D6; /* or any style you prefer for highlighting */

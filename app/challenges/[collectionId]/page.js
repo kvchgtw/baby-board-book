@@ -31,9 +31,18 @@ function ChallengePage({ params }) {
   const [allLoaded, setAllLoaded] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const router = useRouter();
   const { user } = useUser();
   const userId = user?.id;
+  
+  const playWinSound = () => {
+    const audio = new Audio('https://d35aaqx5ub95lt.cloudfront.net/sounds/37d8f0b39dcfe63872192c89653a93f6.mp3');
+    audio.play();
+  }
+
+  const playLostSound = () => {
+    const audio = new Audio('https://d35aaqx5ub95lt.cloudfront.net/sounds/f0b6ab4396d5891241ef4ca73b4de13a.mp3');
+    audio.play();
+  }
 
   useEffect(() => {
     if (!userId) {
@@ -97,11 +106,12 @@ function ChallengePage({ params }) {
       setConfirmButtonColorStyles(styles.challenge__green__confirmButton)
       setResultIcon(greenCheck)
       setResultIconClass(styles.greenCheckIcon);
+      playWinSound();
     } else {
       setConfirmButtonColorStyles(styles.challenge__red__confirmButton)
       setResultIcon(redCross)
       setResultIconClass(styles.redCrossIcon);
-
+      playLostSound();
     }
     setchallengeHrStyle(styles.challenge__hr__hide)
     setcontainerStyle(styles.confirmButton__container__clicked)
@@ -149,7 +159,8 @@ function ChallengePage({ params }) {
             ))}
           </div>
           <Modal_Quiz_Finish show={showModal} >
-              <div className={styles.modalText}>Perfect! You answered {correctAnswers} out of 3 questions correctly.</div>
+            <h2>Good job!</h2>
+            <div className={styles.modalText}>You answered {correctAnswers} out of 3 questions correctly.</div>
           </Modal_Quiz_Finish>
           <div className={`${styles.challenge__hr} ${challengeHrStyle}`}></div>
           <div className={`${styles.confirmButton__container} ${containerStyle}`}>
