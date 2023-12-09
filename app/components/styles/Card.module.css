@@ -2,17 +2,36 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 .card {
-    border: 0.5px solid #3F3F46;
+    border: 3px solid #344650;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 3px #344650; */
     padding: 0px;
-    background-color: #27272A;
+    background-color: #101F24;
     margin: 10px;
     cursor: pointer;
     width: 220px;
     height: 305px;
+    transition: margin-top 0.3s ease; 
+
+    
 }
+
+.card:hover{
+    
+    /* border: 3px solid #2986AA; */
+    background-color: #1D3037;
+
+}
+
+.card:active{
+    border: 3px solid #2986AA; 
+    transition: margin-bottom 0.3s ease; 
+
+
+
+}
+
 @media screen and (min-width: 300px) and (max-width: 767px){
     .card {
         width: 350px;
@@ -33,7 +52,7 @@
     padding-left: 15px;
 }
 .cardTitle{
-    color: #FAFAFA;
+    color: #F0F7FC;
     font-size: 20px;
     font-weight: 700;
     line-height: 50px;
@@ -52,7 +71,7 @@
 }
 
 .cardSubtitle{
-    color: #FAFAFA;
+    color: #F0F7FC;
     font-size: 14px;
     line-height: 14px;
 

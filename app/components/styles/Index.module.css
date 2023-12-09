@@ -20,7 +20,15 @@
     align-items: center;
 }
 
-@media screen and (min-width: 300px) and (max-width: 767px){
+@media screen and (min-width: 1201px) and (max-width: 38400px){
+.homePageElementContainer{
+    margin: 0 auto;
+    width: 1100px;
+
+}
+}
+
+@media screen and (min-width: 300px) and (max-width: 1200px){
 
 .homePageElementContainer{
     display: block;
@@ -34,7 +42,7 @@
     height:600px;
 
 }
-@media screen and (min-width: 300px) and (max-width: 767px){
+@media screen and (min-width: 768px) and (max-width: 1200px){
     .indexFirstImageContainer{
         width: 280px;
         height:280px;
@@ -45,6 +53,27 @@
 }
 
 @media screen and (min-width: 300px) and (max-width: 767px){
+    .indexFirstImageContainer{
+        width: 280px;
+        height:280px;
+        margin: 0 auto;
+
+    
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 3840px){
+
+    .foxRaccoonBg{
+        position: relative;
+        width: 475px;
+        height: 490.15px;
+        margin: 30px 80px;
+    }
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
     .foxRaccoonBg{
         width: 280px;
         height: 280px;
@@ -52,17 +81,17 @@
     }
 
 }
-@media screen and (min-width: 768px) and (max-width: 3840px){
 
-.foxRaccoonBg{
-    position: relative;
-    width: 475px;
-    height: 490.15px;
-    margin: 30px 80px;
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .foxRaccoonBg{
+        width: 280px;
+        height: 280px;
+
+    }
+
 }
 
-}
-@media screen and (min-width: 768px) and (max-width: 3840px){
+@media screen and (min-width: 1201px) and (max-width: 3840px){
 
 .foxRaccoon{
     position: relative;
@@ -72,6 +101,19 @@
     height: 441.34px;
 
 }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .foxRaccoon{
+        width: 270px;
+        height: 270px;
+        position: relative;
+        bottom: 300px;
+        left: 18px;
+
+    }
+
+
 }
 
 @media screen and (min-width: 300px) and (max-width: 767px){
@@ -94,21 +136,25 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1200px){
     .mainElement{
-        margin: 160px auto;
+        margin: 0px auto;
+        display: block;
+
        
     }
 
 }
 @media screen and (min-width: 300px) and (max-width: 767px){
     .mainElement{
-        margin: 0;
-       
+        margin: 0 auto;
+        display: block;
+
     }
 
 }
 
 
 .titleText{
+    width: 600px;
     font-size: 48px;
     font-weight: 700;
     color: #F0F7FC;
@@ -120,6 +166,7 @@
 @media screen and (min-width: 768px) and (max-width: 1200px){
     .titleText{
         font-size: 42px;
+        width: 100%;
     }
 
 }

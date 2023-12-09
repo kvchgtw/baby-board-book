@@ -1,10 +1,13 @@
 .imageContainer{
     padding: 0px 60px;
-    background-color: #18181B;
-    color: #FAFAFA;
+    background-color: #101F24;
+    color: #F0F7FC;
     text-align: center;
     margin-bottom: 50px;
 }
+
+
+
 
 .challenge__imageContainer{
     display: flex;
@@ -12,15 +15,32 @@
     justify-content: center;
     align-items: center;
     padding: 15px 60px;
-    background-color: #18181B;
-    color: #FAFAFA;
+    background-color: #101F24;
+    color: #F0F7FC;
     text-align: center;
     margin: 0px 0 100px;
 }
 
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .challenge__imageContainer{
+    padding: 15px 10px;
+    margin: 0px 0 60px;
+
+
+  }
+}
+
 .challenge__singleImageContainer{
     height: 260px;
-    border: 3px solid #18181B;
+    border: 3px solid #101F24;
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .challenge__singleImageContainer{
+    height: 170px;
+
+  }
 
 }
 
@@ -47,8 +67,32 @@
     height: 250px;
     border-radius: 15px;
     padding: 5px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .challenge__Image{
+    width: 170px;
+    height: 170px;
+    padding: 0px;
 
 
+  }
+
+}
+
+.selectedImage {
+  border: 3px solid #1899D6; /* or any style you prefer for highlighting */
+  height: 260px;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .selectedImage {
+    height: 170px;
+    border-radius: 18px;
+
+  }
 }
 
 .textContainer{
@@ -165,9 +209,10 @@
 
 .loaderQuote{
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
-    padding: 0px 40px 40px 40px;
+    margin: 40px auto;   
+    width: 80vw;
 }
 
 .emptyDataError{
@@ -242,17 +287,21 @@
 
   }
 
-.selectedImage {
-    border: 3px solid #1899D6; /* or any style you prefer for highlighting */
-    height: 260px;
-    border-radius: 15px;
-  }
+
   
 
 .challenge__result__container{
     display: flex;
     align-items: center;
     margin: 0 40px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .challenge__result__container{
+    padding: 10px 0;
+  }
+
+
 }
 .resultMessage {
     text-align: center;
@@ -279,6 +328,13 @@
     height: 140px; 
   }
 
+  @media screen and (min-width: 300px) and (max-width: 767px){
+    .confirmButton__container{
+      height: 230px; 
+
+    }
+  }
+
   .confirmButton__container__clicked{
     display: flex;
     justify-content: space-between;
@@ -287,6 +343,15 @@
     height: 140px; 
     background-color: rgb(32, 47, 54);
   }
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .confirmButton__container__clicked{
+    height: 230px; 
+    display: block;
+
+  }
+
+}
 
 
   .confirmButton{
@@ -301,9 +366,12 @@
     margin: 0 40px;
     transition: margin-top 0.3s ease; 
     box-shadow: 0px 3px rgb(121, 185, 51);
+  }
 
-
-
+  @media screen and (min-width: 300px) and (max-width: 767px){
+  .confirmButton{
+  width: 80vw;  
+  }
   }
 
   .confirmButton:disabled{
@@ -346,6 +414,14 @@
     transition: margin-top 0.3s ease; 
     box-shadow: 0px 3px rgb(121, 185, 51);
   }
+
+  @media screen and (min-width: 300px) and (max-width: 767px){
+    .challenge__green__confirmButton{
+      width: 80vw;
+    }
+
+  
+  }
   .challenge__green__confirmButton:active{
     margin: 5px 40px 0px;
     transition: margin-bottom 0.3s ease; 
@@ -372,6 +448,14 @@
     margin: 0 40px;
     transition: margin-top 0.3s ease; 
     box-shadow: 0px 3px rgb(216, 72, 72);
+  }
+
+  @media screen and (min-width: 300px) and (max-width: 767px){
+    .challenge__red__confirmButton{
+      width: 80vw;
+
+    }
+
   }
 
   .challenge__red__confirmButton:active{
@@ -402,13 +486,37 @@
     position: relative;
     margin: 27px 0 0 20px;
   }
+
+  @media screen and (min-width: 300px) and (max-width: 767px){
+    .greenCheckIcon{
+      margin: 19px 0 0 8px;
+    }
+
+  
+  }
   .redCrossIcon{
     position: relative;
     margin: 26px 0 0 25px;
   }
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .redCrossIcon{
+    margin: 15px 0 0 15px;
+
+  }
+
+}
+
   .challenge__Icon__container{
     width: 80px;
     height: 80px;
     border-radius: 98px;
     background-color: #131f24;
   }
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+  .challenge__Icon__container{
+    width: 60px;
+    height: 60px; 
+  }
+
+}

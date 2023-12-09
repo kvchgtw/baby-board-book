@@ -9,26 +9,25 @@ import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 import Footer from '../components/Footer'
 
 
-const animalEasyList = ['cat', 'dog', 'fox']
+const animalEasyList = ['cat', 'dog', 'fox', "elephant", 'Raccoon']
 
 // const animalEasyList = ['cat', 'dog', 'fox', "elephant", "lion", "tiger", "zebra", "giraffe", "bear", 
 // "wolf"]
 
 const animalMediumList = ['otter', 'sloth', 'panda', "leopard", "meerkat" 
-, "eagle", "penguin", ]
+, "penguin", ]
 
-const animalHardList = [ 'hippopotamus', 'Raccoon',"parrot", "buffalo", "camel", "donkey", 
-"falcon", "hamster"]
+const animalHardList = [ 'hippopotamus', 'polar bear',"parrot", "buffalo", "donkey", "hamster"]
 
 
 const vehicleEasyList = ['truck', 'airplane', 'school bus', "train",  "boat", "garbage truck", "sports car", "ice cream truck", "scooter", 'taxi']
 const vehicleMediumList = ['bicycle', 'motorcycle', 'yacht', "bulldozer", "canoe", "van", "cement mixer", 'rocket']
-const vehicleHardList = ['police car', 'ambulance', 'helicopter', 'fire engine', "tractor", "Tesla Model 3", 'dump truck', 'private jet', "snowmobile", 'Aircraft carrier']
+const vehicleHardList = ['police car', 'ambulance', 'helicopter', 'fire engine', "tractor", "Tesla Model 3", 'dump truck', "snowmobile", 'Aircraft carrier']
 
 
 const fruitEasyList = ['strawberry', 'banana', 'lemon', "orange", "mango", "grape", "pineapple", "watermelon", "cherry", "peach"]
 const fruitMediumList = ["pear", "plum", "grapefruit", "raspberry", "dragon fruit", "passion fruit", "lychee", "papaya", "guava", "cranberry"]
-const fruitHardList = ['avocado', 'durian', 'blueberry', 'persimmon', 'kumquat', 'mulberry', 'hami melon', "tangerine", 'star fruit', 'elderberry']
+const fruitHardList = ['avocado', 'durian', 'blueberry', 'persimmon', 'kumquat', 'mulberry', "tangerine", 'elderberry']
 
 
 const sleepAnimalEasyList = ['cat', 'dog', 'fox', "lion", "tiger", "bear", "wolf"]
