@@ -20,9 +20,75 @@
     align-items: center;
 }
 
+@media screen and (min-width: 300px) and (max-width: 767px){
+
+.homePageElementContainer{
+    display: block;
+
+
+}
+}
+
+.indexFirstImageContainer{
+    width: 600px;
+    height:600px;
+
+}
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .indexFirstImageContainer{
+        width: 280px;
+        height:280px;
+        margin: 0 auto;
+
+    
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .foxRaccoonBg{
+        width: 280px;
+        height: 280px;
+
+    }
+
+}
+@media screen and (min-width: 768px) and (max-width: 3840px){
+
+.foxRaccoonBg{
+    position: relative;
+    width: 475px;
+    height: 490.15px;
+    margin: 30px 80px;
+}
+
+}
+@media screen and (min-width: 768px) and (max-width: 3840px){
+
+.foxRaccoon{
+    position: relative;
+    bottom: 527px;
+    left: 115px;
+    width: 443px;
+    height: 441.34px;
+
+}
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+    .foxRaccoon{
+        width: 270px;
+        height: 270px;
+        position: relative;
+        bottom: 300px;
+        left: 18px;
+
+    }
+
+}
+
 .mainElement{
     text-align: center;
-    margin: 280px 60px;
+    margin: 105px 65px 140px 0;
     display: flex;
     align-items: center;
 }
@@ -35,7 +101,7 @@
 }
 @media screen and (min-width: 300px) and (max-width: 767px){
     .mainElement{
-        margin: 100px auto;
+        margin: 0;
        
     }
 
@@ -43,11 +109,13 @@
 
 
 .titleText{
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 700;
-    color: #FAFAFA;
-    margin: 0px 0px 5px;
+    color: #F0F7FC;
+    margin: 0px auto 15px;
 }
+
+
 
 @media screen and (min-width: 768px) and (max-width: 1200px){
     .titleText{
@@ -59,15 +127,18 @@
 @media screen and (min-width: 300px) and (max-width: 767px){
     .titleText{
         font-size: 34px;
+        margin: 10px auto 20px;
+        width: 100%;
     }
 
 }
 
 .subTitleText{
-    font-size: 30px;
+    width: 420px;
+    font-size: 24px;
     font-weight: 300;
-    color: #FAFAFA;
-    margin: 0px 0px 5px;
+    color: #F0F7FC;
+    margin: 0px auto 15px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px){
@@ -78,25 +149,51 @@
 }
 @media screen and (min-width: 300px) and (max-width: 767px){
     .subTitleText{
-        font-size: 16px;
+        font-size: 18px;
+        width: 100%;
+
     }
 
 }
 
+.ctaBtnConatainer{
+    height: 46px;
+    display: flex;
+    justify-content: center;
+}
+
+
 .createCTAbtn{
-    font-size: 24px;
-    font-weight: 500;
-    color: #FAFAFA;
+    font-size: 18px;
+    font-weight: 600;
+    color: #131F24;
     border: 0px;
-    background-color: #F5A524;
-    border-radius: 5px;
-    width: 220px;
-    height: 50px;
+    background-color: #93D333;
+    border-radius: 16px;
+    width: 240px;
+    height: 46px;
     cursor: pointer;
-    margin: 15px;
+    margin: 15px 0 0 0;
+    transition: margin-top 0.3s ease; 
+    box-shadow: 0px 3px rgb(121, 185, 51);
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+.createCTAbtn{
+    width: 90vw;
+}
 }
 
 .createCTAbtn:hover{
-    background-color: #F7B750;
-    transition: 0.4s;
+    background-color: #A2E838;
+    color: #152228;
+    box-shadow: 0px 3px #85CB38;
 }
+.createCTAbtn:active{
+    margin: 20px 0 0 0;
+    transition: margin-bottom 0.3s ease; 
+    box-shadow: 0px 0px red 
+
+
+  }
