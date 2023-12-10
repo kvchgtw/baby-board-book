@@ -30,6 +30,7 @@ function ChallengePage({ params }) {
   const [resultIconClass, setResultIconClass] = useState('');
   const [allLoaded, setAllLoaded] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  
 
   const { user } = useUser();
   const userId = user?.id;

@@ -388,6 +388,21 @@
 }
 
 
+.collection__createNewButton{
+  width: 200px;
+  height: 46px;
+  font-size: 18px;
+  border-radius: 16px;
+  border: 0px;
+  cursor: pointer;
+  background-color: #93D333;
+  color: #131F24;
+  margin: 0 40px;
+  transition: margin-top 0.3s ease; 
+  box-shadow: 0px 3px rgb(121, 185, 51);
+}
+
+
   .confirmButton{
     width: 150px;
     height: 46px;

@@ -65,7 +65,7 @@ const CollectionsPage = () => {
                         <><div className={styles.emptyDataError}>You have no collection now. Press the Create button to try out.</div>
                             <div className={styles.buttonContainer}>
                                 <Link href= '/create'>
-                                    <button className={styles.createCTAbtn}> Create Now </button>
+                                    <button className={styles.collection__createNewButton}> Create Now </button>
                                 </Link>
                             </div>
                         </>

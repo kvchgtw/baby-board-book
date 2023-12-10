@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid'; // 引入用于生成 UUID 的库
 import Footer from '../components/Footer'
 
 
-const animalEasyList = ['cat', 'dog', 'fox', "elephant", 'Raccoon']
+const animalEasyList = ['cat', 'dog', 'fox', "elephant", 'Raccoon', 'rabbit']
 
 // const animalEasyList = ['cat', 'dog', 'fox', "elephant", "lion", "tiger", "zebra", "giraffe", "bear", 
 // "wolf"]
@@ -20,7 +20,7 @@ const animalMediumList = ['otter', 'sloth', 'panda', "leopard", "meerkat"
 const animalHardList = [ 'hippopotamus', 'polar bear',"parrot", "buffalo", "donkey", "hamster"]
 
 
-const vehicleEasyList = ['truck', 'airplane', 'school bus', "train",  "boat", "garbage truck", "sports car", "ice cream truck", "scooter", 'taxi']
+const vehicleEasyList = ['airplane', 'school bus', "train",  "boat", "garbage truck", "sports car", "ice cream truck", "scooter"]
 const vehicleMediumList = ['bicycle', 'motorcycle', 'yacht', "bulldozer", "canoe", "van", "cement mixer", 'rocket']
 const vehicleHardList = ['police car', 'ambulance', 'helicopter', 'fire engine', "tractor", "Tesla Model 3", 'dump truck', "snowmobile", 'Aircraft carrier']
 
