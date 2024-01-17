@@ -1,4 +1,4 @@
-AI Baby Board Book [Live Demo Link]([http://example.co](https://baby-board-book.vercel.app/)m)
+AI Baby Board Book [Live Demo Link][http://example.co](https://baby-board-book.vercel.app/)
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
