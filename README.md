@@ -1,6 +1,8 @@
 ## Introduction
 
-https://github.com/kvchgtw/baby-board-book/issues/1#issue-2085483495
+![Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/c8ba1c3b-5e46-4790-84c3-f3cf29284cc7
+)
+
 
 AI Babyboard Book is an AI-powered parent-child shared reading content tool, which is designed for 0-3 year-old kids. 
 
