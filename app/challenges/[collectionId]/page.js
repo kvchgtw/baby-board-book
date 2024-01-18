@@ -34,14 +34,15 @@ function ChallengePage({ params }) {
 
   const { user } = useUser();
   const userId = user?.id;
-  
+
+
   const playWinSound = () => {
-    const audio = new Audio('https://d35aaqx5ub95lt.cloudfront.net/sounds/37d8f0b39dcfe63872192c89653a93f6.mp3');
+    const audio = new Audio('https://cvws.icloud-content.com/B/AcObKxUtBLKk9-NkGFXrW6OZT8-SAVb_OUNTaO0Qy_jhrPM6VG4eIIxn/correct.mp3?o=Atd449gAhcsR-7I_kLVINNgVn-0fac2YCxSWyiqLtrum&v=1&x=3&a=CAog36ZvI-VCmfCBjUoTJcGCYBl5sIeig9--AeSe6phhpxYSbRC3yq7e0TEYt6eK4NExIgEAUgSZT8-SWgQeIIxnaiYBqFmU-CUd-fyESm7f0vL838foIEDI_UAM_r6H9YdEC3TMiWVWKXImZuK3d4VMDZVc7RwfuJMIrhc1mPXhBXzeJqwEZpIGo-5QLS1DlNA&e=1705571947&fl=&r=46606531-3911-4f64-864a-a8643b472e51-1&k=cyBWfbZU67bsfDYN5s2xzQ&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=140&s=-4gGUH70DdVebFe1et_iEOG56KM&cd=i');
     audio.play();
   }
 
   const playLostSound = () => {
-    const audio = new Audio('https://d35aaqx5ub95lt.cloudfront.net/sounds/f0b6ab4396d5891241ef4ca73b4de13a.mp3');
+    const audio = new Audio('https://cvws.icloud-content.com/B/ARqw2b04U-gjmVoHpoCY9gOiQ48cATRatqTsPdZYehOnhxgi-65kdk6G/wrong.mp3?o=AgmEhBsPmgY_kpZyuVn_2_WvWvC7jOvFGM8EGMnt05LF&v=1&x=3&a=CAogSlp_a3mxSni2XgM4FcgIsifZX7sAs8Oerv0T53ZVLq0SbRDipqve0TEY4oOH4NExIgEAUgSiQ48cWgRkdk6Gaiaf5dG6IMitZ_8WbRznSdbY-kI_r2LjaPimbbv-53nCSfMvu-5WOXIm1hPWmqqFv61j10pwLxg9uzSUK6x3Ekt1_fh_x4fAV6vfZDxPQoo&e=1705571893&fl=&r=2663a132-2166-4bd4-bde0-7247a91cda97-1&k=Rx7UDw6Lh7k-RMakvjFNdw&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=140&s=-k048qUFNWWm_NAnCsONahR8AhI&cd=i');
     audio.play();
   }
 
