@@ -9,7 +9,7 @@ Integrated with Leonardo.Ai API, the AI Babyboard book provides image series of 
 ![RWD Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/d22c1ca4-f171-4ed3-86b4-f8528e73266c)
 
 ### Try it now: 
-phttps://baby-board-book.vercel.app/
+https://baby-board-book.vercel.app/
 ## Technique Overview
 - #### React
   - React Hooks
