@@ -1,6 +1,6 @@
 # [AI Babyboard Book](https://baby-board-book.vercel.app/)
 
-![Landing page Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/87d97171-fe06-4be5-9dc7-3d840fad4ac2)
+![Landing page Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/bfaae2a7-0bc0-4f98-96a9-5f0e952f3cab)
 
 AI Babyboard Book is an AI-powered parent-child shared reading content tool, which is designed for 0-3 year-old kids. 
 
