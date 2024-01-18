@@ -1,4 +1,4 @@
-# [AI Babyboard Book](https://baby-board-book.vercel.app/)
+# [AI Baby Board Book](https://baby-board-book.vercel.app/)
 
 ![Landing page Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/bfaae2a7-0bc0-4f98-96a9-5f0e952f3cab)
 
