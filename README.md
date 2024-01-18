@@ -25,7 +25,7 @@ If you need a test account, please use the following account:
   - Image
   - remotePatterns
   - Link
-- #### Leonardo.Ai (Image Generation API)
+- #### Leonardo.Ai (AI Image Generation API)
   - POST request
   - Webhook
 - #### Firebase
