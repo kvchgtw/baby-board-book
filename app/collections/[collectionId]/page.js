@@ -40,7 +40,7 @@ function CollectionIdPage({ params }) {
         imagesArray.push({ imageUrl: data.imageUrl, itemName: data.itemName });
       });
       setImages(imagesArray);
-      console.log('update query image array: ', imagesArray);
+      // console.log('update query image array: ', imagesArray);
       loader(imagesArray);
     });
 
