@@ -40,6 +40,7 @@
 .indexFirstImageContainer{
     width: 600px;
     height:600px;
+    margin: 10px 20px 0 -53px;
 
 }
 @media screen and (min-width: 768px) and (max-width: 1200px){
@@ -130,7 +131,7 @@
 
 .mainElement{
     text-align: center;
-    margin: 105px 65px 140px 0;
+    margin: 105px 65px 140px -20px;
     display: flex;
     align-items: center;
 }
