@@ -132,7 +132,7 @@ const generatePrompt = (category, itemName) => {
           description = 'colorful, high detailed';
           break;
   }
-  console.log('description: ', description)
+  // console.log('description: ', description)
 
   return `high quality, 8K Ultra HD, style cartoon, two-dimensional, ${description} ${itemName}`;
 };
@@ -143,18 +143,18 @@ const generatePrompt = (category, itemName) => {
       selectedCategorySaved = bookCategories[index]
       selectedCategoryDisplayedNameSaved = selectedCategorySaved.displayedTitle
       selectedCategoryTitle = selectedCategorySaved.title
-      console.log('selected category: ', selectedCategoryTitle)
+      // console.log('selected category: ', selectedCategoryTitle)
   };
 
   const handleDifficultySelect = async (difficultyLevel) => {
     try {
-      console.log('handleDifficultySelect 啟動')
+      // console.log('handleDifficultySelect 啟動')
         const itemList = getListByCategoryAndDifficulty(selectedCategoryTitle, difficultyLevel);
-        console.log('new itemList: ', itemList)
+        // console.log('new itemList: ', itemList)
         for (const itemName of itemList) {  // 遍歷 animalList
         const prompt = generatePrompt(selectedCategoryTitle, itemName);
         
-        console.log('prompt:', prompt)
+        // console.log('prompt:', prompt)
       
       const response = await fetch('/api/fetchData', {
           method: 'POST',
@@ -178,7 +178,7 @@ const generatePrompt = (category, itemName) => {
   
         const data = await response.json();
         // const generationId = await data.sdGenerationJob.generationId
-        console.log('fetchData response:', data); 
+        // console.log('fetchData response:', data); 
           
         }
       } catch (error) {
