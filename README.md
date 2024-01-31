@@ -1,6 +1,6 @@
 # [AI Baby Board Book](https://baby-board-book.vercel.app/)
 
-![Landing page Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/bfaae2a7-0bc0-4f98-96a9-5f0e952f3cab)
+![Landing page Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/5a0b4176-eff0-497b-8a86-e102e04ca453)
 
 ### What is the AI Baby Board Book?
 
@@ -8,7 +8,7 @@ AI Baby Board Book is an AI-powered parent-child shared reading content tool, wh
 
 Integrated with Leonardo.Ai API, the AI Baby Board book provides image series of animals, vehicles, fruits, and sleeping animals. So parents can easily create different content to interact with kids.
 
-![RWD Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/d22c1ca4-f171-4ed3-86b4-f8528e73266c)
+![RWD Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/26e85225-ba9b-4290-9b54-d17545e5d116)
 
 ### Try it now: 
 https://baby-board-book.vercel.app/
