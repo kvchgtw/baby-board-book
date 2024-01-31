@@ -47,7 +47,7 @@ If you need a test account, please use the following account:
 ## Architecture
 - #### Integrated React, Next.js and [Leonardo.Ai](https://app.leonardo.ai/) AI image generation API to develop main feature
 
-![image alt](https://github.com/kvchgtw/baby-board-book/assets/138418959/3a493bd0-b068-4298-a894-17538aa99c30)
+![image alt](https://github.com/kvchgtw/baby-board-book/assets/138418959/0f82d488-1b94-4e96-8332-895b8ca9dc20)
 
 ## Contact
 If there is any feedback for this project, please feel free to email me. 
