@@ -6,7 +6,7 @@
 
 AI Baby Board Book is an AI-powered parent-child shared reading content tool, which is designed for 0-3 year-old kids. 
 
-Integrated with Leonardo.Ai API, the AI Baby Board book provides image series of animals, vehicles, fruits, and sleeping animals. So parents can easily create different content to interact with kids.
+Built with `React`, `Next.js`, `Firestore`, `JavaScript`, `CSS`, `HTML`, `Vercel`, and integrated with Leonardo.Ai API, the AI Baby Board book provides image series of animals, vehicles, fruits, and sleeping animals. So parents can easily create different content to interact with kids.
 
 ![RWD Screeshot](https://github.com/kvchgtw/baby-board-book/assets/138418959/26e85225-ba9b-4290-9b54-d17545e5d116)
 
