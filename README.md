@@ -13,6 +13,8 @@ Built with `React`, `Next.js`, `Firestore`, `JavaScript`, `CSS`, `HTML`, `Vercel
 ### Try it now: 
 https://baby-board-book.vercel.app/
 
+[Demo Video](https://drive.google.com/file/d/1ubIzO_oVcVHgGGdvCi5J_Km9iQnXGsJp/view?usp=sharing)
+
 If you need a test account, please use the following account:
 - Email: aibabyboardbook@icloud.com
 - Password: aibabyboardbook!Qaz
